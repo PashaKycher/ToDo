@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+# ToDo — Simple React To‑Do App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a small single-page To‑Do application built with React and Materialize CSS. It was created with Create React App and stores tasks in the browser's Local Storage.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Add tasks by typing a name and pressing Enter.
+- Toggle tasks as completed using the checkbox.
+- Remove tasks using the X button.
+- Tasks persist between sessions via Local Storage.
 
-### `npm start`
+## Tech stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- React (v18)
+- Create React App (react-scripts)
+- Materialize CSS for basic styling
+- uuid for unique task ids
+- gh-pages for optional deployment to GitHub Pages
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Project structure
 
-### `npm test`
+- `public/` — static files (HTML, manifest, icons)
+- `src/` — React source code
+  - `Main.jsx` — main app component, handles adding tasks and date display
+  - `index.js` — app entry point
+  - `index.css` — base and Materialize imports/styles
+  - `components/Item.jsx` — single todo item component (toggle/remove)
+  - `components/List.jsx` — renders list of tasks
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
 
-### `npm run build`
+Make sure you have Node.js (>=16) and npm installed.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Install dependencies:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```powershell
+npm install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Start the development server:
 
-### `npm run eject`
+```powershell
+npm start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The app will open at http://localhost:3000 by default.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Available scripts
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- `npm start` — Start the development server.
+- `npm test` — Run tests (Create React App test runner).
+- `npm run build` — Build the app for production into `build/`.
+- `npm run deploy` — Run the `gh-pages` deploy (the project has `predeploy` configured to build first). Update the `homepage` field in `package.json` before using.
+- `npm run eject` — Eject the Create React App configuration (irreversible).
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Notes and suggestions
 
-## Learn More
+- The app uses Local Storage for persistence. If you need multi-device sync, integrate a backend or a cloud storage solution.
+- `Item.jsx` and `Main.jsx` directly access Local Storage; consider lifting state updates to a central place (Main) and pass callbacks to children for clearer data flow.
+- Input currently adds tasks only on Enter key. You may add a dedicated Add button for accessibility.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Contributing
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Small improvements, bug fixes and docs are welcome. To contribute:
 
-### Code Splitting
+1. Fork the repository and create a new branch.
+2. Make changes and add tests if appropriate.
+3. Open a pull request with a clear description of your changes.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## License
 
-### Analyzing the Bundle Size
+This repository does not include a license file. Add a license (for example MIT) if you plan to publish it publicly.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Contact
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Linkedin - https://www.linkedin.com/in/pavlo-kucheriavykh-1b8053329
